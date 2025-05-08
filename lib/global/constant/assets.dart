@@ -1,0 +1,125 @@
+class AppAssets {
+  static const assetFromImagesPath = 'assets/image';
+  static const assetFromIconsPath = 'assets/icons';
+
+
+  static const icLoginBg = "$assetFromIconsPath/aavaas_new.jpg";
+  static const icWarning = "$assetFromIconsPath/ic_warnig.png";
+  static const icLogoWhite = "$assetFromIconsPath/ic_nebula_white_logo.PNG";
+  static const icLogoWhiteWithoutText = "$assetFromIconsPath/ic_logo_withe_without_text.png";
+  static const icFacebook = "$assetFromIconsPath/facebook.png";
+  static const icNews = "$assetFromIconsPath/ic_news.png";
+  static const icAppIcon = "$assetFromIconsPath/app_logo.png";
+  static const icRefresh = "$assetFromIconsPath/ic_refresh.png";
+  static const icYoutube = "$assetFromIconsPath/youtube.png";
+  static const icUserIcon = "$assetFromIconsPath/user_icon.png";
+  static const icNoSearchFound = "$assetFromIconsPath/no_search.jpg";
+  static const icMail = "$assetFromIconsPath/email.png";
+  static const icPhone = "$assetFromIconsPath/phone_call.png";
+  static const icLocation = "$assetFromIconsPath/ic_location.png";
+  static const icLocationPin = "$assetFromIconsPath/map.png";
+  static const icMailIcon = "$assetFromIconsPath/ic_mail.png";
+  static const icAhd = "$assetFromIconsPath/ic_ahd.png";
+  static const icChennai = "$assetFromIconsPath/ic_chennai.PNG";
+  static const icNCareCustomised = "$assetFromIconsPath/ic_naebulacare_customised.PNG";
+  static const icHYD = "$assetFromIconsPath/ic_hyd.PNG";
+  static const icShop = "$assetFromIconsPath/ic_shop.PNG";
+  static const icMyBusiness = "$assetFromIconsPath/ic_my_business.PNG";
+  static const icKycFalse = "$assetFromIconsPath/ic_kyc_false.PNG";
+  static const icKycTrue = "$assetFromIconsPath/ic_kyc_true.PNG";
+  static const icSetting = "$assetFromIconsPath/ic_settings.png";
+  static const icIncome = "$assetFromIconsPath/ic_income.PNG";
+  static const icPromotion = "$assetFromIconsPath/ic_promotion.PNG";
+  static const icMyDownline = "$assetFromIconsPath/ic_my_downline.PNG";
+  static const icStar = "$assetFromIconsPath/ic_star_black.PNG";
+  static const icShare = "$assetFromIconsPath/ic_share_black_24dp.PNG";
+  static const icLogout = "$assetFromIconsPath/ic_logout_new.PNG";
+  static const icNext = "$assetFromIconsPath/ic_right.png";
+  static const icOrderBox = "$assetFromIconsPath/ic_box.png";
+  static const icBack = "$assetFromIconsPath/ic_arrow_back.PNG";
+  static const icRightArrow = "$assetFromIconsPath/ic_arrow_right.PNG";
+  static const icSearch = "$assetFromIconsPath/ic_search_black.PNG";
+  static const icRupees = "$assetFromIconsPath/rupee.png";
+  static const icOrderColor = "$assetFromIconsPath/ic_order_color.png";
+  static const icGift = "$assetFromIconsPath/gift.gif";
+  static const icNebulaLogoGif = "$assetFromIconsPath/nebula_logo_news.gif";
+
+  static const imgTop = "$assetFromImagesPath/img_top.jpg";
+  static const imgBottom = "$assetFromImagesPath/imgfooter.jpg";
+  static const imgSideMenuBg = "$assetFromImagesPath/side_menu_bg.png";
+
+
+
+
+  static const icLeftBottom = "$assetFromIconsPath/ic_left_bottom.png";
+  static const icLeftTop = "$assetFromIconsPath/ic_left_top.png";
+  static const icPaymentDone = "$assetFromIconsPath/ic_payment_done.png";
+  static const icPaymentFailed = "$assetFromIconsPath/ic_payment_failed.png";
+  static const icRightBottom = "$assetFromIconsPath/ic_right_bottom.png";
+  static const icRightTop = "$assetFromIconsPath/ic_right_top.png";
+  static const icWellness = "$assetFromIconsPath/exercise.png";
+  static const icStorage = "$assetFromIconsPath/storage_box.png";
+  static const icSkipNext = "$assetFromIconsPath/next.png";
+  static const icPersonalCare = "$assetFromIconsPath/personal_hygiene.png";
+  // static const icAppBg = "$assetFromIconsPath/ic_app_bg.png";
+  static const icAppBg = "$assetFromIconsPath/bg.png";
+  static const icNoDataFound = "$assetFromIconsPath/no_data_found.png";
+  static const icIntroOne = "$assetFromIconsPath/one.png";
+  static const icIntroTwo = "$assetFromIconsPath/two.png";
+  static const icIntroThree = "$assetFromIconsPath/three.png";
+  static const icIntroFour = "$assetFromIconsPath/four.png";
+  static const icIntroFive = "$assetFromIconsPath/five.png";
+  static const icIntroSix = "$assetFromIconsPath/six.png";
+  static const icForwardIcon = "$assetFromIconsPath/ic_forward.png";
+  static const appLogo = '$assetFromImagesPath/img_app_logo.png';
+  static const imgDummyProfileImage = '$assetFromImagesPath/img_dummy_profile.png';
+  static const imgBackground = '$assetFromImagesPath/background.png';
+  static const imgClock = '$assetFromImagesPath/clock.png';
+  static const imgLightOne = '$assetFromImagesPath/light-1.png';
+  static const imgLightTwo = '$assetFromImagesPath/light-2.png';
+
+  static const icDropdown = "$assetFromIconsPath/ic_drop_down.png";
+  static const icBankDetails = "$assetFromIconsPath/ic_bank_details.png";
+  static const icKyc = "$assetFromIconsPath/kyc.png";
+  static const icDashboard = "$assetFromIconsPath/ic_dashboard.png";
+  static const icLogoWithText = "$assetFromIconsPath/ic_logo_with_text.png";
+  static const icMyBusinessTab = "$assetFromIconsPath/ic_my_businss_tab.png";
+  static const icOffers = "$assetFromIconsPath/ic_ofers.png";
+  static const icSliderLeft = "$assetFromIconsPath/slider_arrow_left.png";
+  static const icRupeeOne = "$assetFromIconsPath/rupee_icon_one.png";
+  static const icRupeeTwo = "$assetFromIconsPath/rupee_icon_two.png";
+  static const icSliderRight = "$assetFromIconsPath/slider_arrow_right.png";
+  static const icActiveBottomHome = "$assetFromIconsPath/ic_home.svg";
+  static const icDeActiveBottomHome = "$assetFromIconsPath/ic_deactive_home.svg";
+  static const icDeActiveBottomSetting = "$assetFromIconsPath/ic_deactive_setting.svg";
+  static const icActiveBottomSetting = "$assetFromIconsPath/ic_active_setting.svg";
+  static const passwordHide = '$assetFromIconsPath/ic_password_hide.png';
+  static const passwordShow = '$assetFromIconsPath/ic_password_show.png';
+  static const searchIcon = '$assetFromIconsPath/search.png';
+  static const icCartIcon = '$assetFromIconsPath/cart_gray.png';
+  static const icDownArrow = '$assetFromIconsPath/ic_down.png';
+  static const closeIcon= '$assetFromIconsPath/close_icon.png';
+  static const icClose= '$assetFromIconsPath/close.png';
+  static const icFilter= '$assetFromIconsPath/filter_icon.png';
+  static const icTrash= '$assetFromIconsPath/ic_trash.png';
+  static const icLikeFill= '$assetFromIconsPath/ic_like_fill.png';
+  static const icBagCart= '$assetFromIconsPath/ic_bag.png';
+  static const icClearFilter= '$assetFromIconsPath/ic_clear_filter.png';
+  static const icOrder= '$assetFromIconsPath/ic_order.svg';
+  static const icUser= '$assetFromIconsPath/ic_user_new.svg';
+  static const icSaveAddress= '$assetFromIconsPath/ic_location.svg';
+  static const icBell= '$assetFromIconsPath/ic_bell.svg';
+  static const icHelpCenter= '$assetFromIconsPath/ic_help_center.svg';
+  static const icChangePassword= '$assetFromIconsPath/ic_change_password.svg';
+  static const icLogOut= '$assetFromIconsPath/ic_logout.svg';
+  static const icCamera= '$assetFromIconsPath/ic_camera.svg';
+  static const icAboutUS= '$assetFromIconsPath/ic_aboutus.svg';
+  static const icPrivacyPolicy= '$assetFromIconsPath/ic_privacy.svg';
+  static const icDelete= '$assetFromIconsPath/delete.svg';
+  static const icWallet= '$assetFromIconsPath/ic_ewallet.png';
+  static const icWhatsapp= '$assetFromIconsPath/whatsapp_icon.png';
+  static const icStepperDone = "$assetFromIconsPath/ic_stepper_done.png";
+  static const icStepperCurrent = "$assetFromIconsPath/ic_stepper_current.png";
+  static const icStepperPending = "$assetFromIconsPath/ic_stepper_pending.png";
+
+}
