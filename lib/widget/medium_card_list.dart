@@ -37,7 +37,7 @@ class _MediumCardListState extends State<MediumCardList> {
       children: [
         SizedBox(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.37,
+          height: MediaQuery.of(context).size.height * 0.28,
           child: isLoading
               ? buildFeaturedPartnersLoadingIndicator()
               : ListView.builder(

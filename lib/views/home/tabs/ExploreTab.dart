@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:deepaskitchen/uttils/theme/app_theme.dart';
 import 'package:deepaskitchen/views/home/promotion_banner.dart';
+import 'package:deepaskitchen/widget/all_category_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -21,6 +22,8 @@ import '../../../uttils/demoData.dart';
 import '../../../widget/medium_card_list.dart';
 import '../../../widget/section_title.dart';
 import '../../sidemenu/sidemenu_view.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 class ExploreTab extends GetView<HomeController> {
   const ExploreTab({ Key? key }) : super(key: key);
@@ -242,16 +245,24 @@ class ExploreTab extends GetView<HomeController> {
     );
   }
 
-  Widget _buildCategories(ThemeData theme) {
-    return SizedBox(
-      height: 60,
-      child: ListView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        scrollDirection: Axis.horizontal,
-        itemCount: controller.categories.length,
-        itemBuilder: (context, index) {
-          return _buildCategory(controller.categories[index], index, theme);
-        },
+  _buildCategories() {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: EdgeInsets.only(bottom: 5, left: 15),
+      child: Row(
+        children: [
+          AllCategoryItem(
+            data: {
+              "name": "All",
+              "icon": FontAwesomeIcons.th,
+            },
+            seleted: true,
+          ),
+          ...List.generate(
+            categories.length,
+                (index) => AllCategoryItem(data: categories[index]),
+          )
+        ],
       ),
     );
   }
@@ -300,11 +311,11 @@ class ExploreTab extends GetView<HomeController> {
                           SizedBox(height: 8,),
                           Row(
                             children: [
-                              Text("${controller.discountedProducts[index].price}", style: theme.textTheme.bodyLarge?.copyWith(decoration: TextDecoration.lineThrough, color: ColorConstants.gray200),),
+                              Text(controller.discountedProducts[index].price, style: theme.textTheme.bodyLarge?.copyWith(decoration: TextDecoration.lineThrough, color: ColorConstants.gray200),),
                               SizedBox(width: 5,),
                               Icon(IconlyLight.arrow_right, size: 18, color: Colors.grey.shade600, ),
                               SizedBox(width: 5,),
-                              Text("${controller.discountedProducts[index].discountPrice}", style: theme.textTheme.titleLarge?.copyWith(),),
+                              Text(controller.discountedProducts[index].discountPrice, style: theme.textTheme.titleLarge?.copyWith(),),
                             ],
                           )
                         ],
@@ -319,4 +330,26 @@ class ExploreTab extends GetView<HomeController> {
       ),
     );
   }
+}
+
+_buildCategories() {
+  return SingleChildScrollView(
+    scrollDirection: Axis.horizontal,
+    padding: EdgeInsets.only(bottom: 5, left: 15),
+    child: Row(
+      children: [
+        AllCategoryItem(
+          data: {
+            "name": "All",
+            "icon": FontAwesomeIcons.th,
+          },
+          seleted: true,
+        ),
+        ...List.generate(
+          categories.length,
+              (index) => AllCategoryItem(data: categories[index]),
+        )
+      ],
+    ),
+  );
 }

@@ -44,6 +44,7 @@ dependencies:
   derry: ^1.4.3
   carousel_slider: ^5.0.0
   zoom_tap_animation: ^1.1.0
+  font_awesome_flutter: ^10.8.0
 font_awesome_flutter: ^10.8.0
 
 dev_dependencies:
