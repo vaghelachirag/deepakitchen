@@ -1,5 +1,7 @@
 
 import 'package:deepaskitchen/views/mainscreen/MainScreen.dart';
+import 'package:deepaskitchen/views/productDetail/product_detail_binding.dart';
+import 'package:deepaskitchen/views/productDetail/product_detail_screen.dart';
 import 'package:get/route_manager.dart';
 
 import '../controllers/home/HomeBinding.dart';
@@ -13,6 +15,8 @@ import '../views/product/ProductPage.dart';
 class Routes {
 
   static const INITIAL = '/home';
+  static String home = '/home';
+  static String productDetail = '/productDetail';
 
   static final routes = [
     GetPage(
@@ -40,6 +44,11 @@ class Routes {
     GetPage(
         name: '/onboardingScreen',
         page: () => OnboardingScreen()
+    ),
+    GetPage(
+        name: productDetail,
+        page: () => ProductDetailScreen(),
+        binding: ProductDetailBinding(),
     )
   ];
 }

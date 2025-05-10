@@ -19,6 +19,7 @@ import '../../../models/offers/OfferModel.dart';
 import '../../../shared/constants/ColorConstants.dart';
 import '../../../uttils/constants.dart';
 import '../../../uttils/demoData.dart';
+import '../../../widget/common_widget.dart';
 import '../../../widget/medium_card_list.dart';
 import '../../../widget/section_title.dart';
 import '../../sidemenu/sidemenu_view.dart';
@@ -35,28 +36,7 @@ class ExploreTab extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: mainBg,
       drawer: const SideMenu(),
-      appBar: AppBar(
-        title: Text("Hi, Deepa's",
-            style: AppStyles.txt16sizeW600White),
-        centerTitle: false,
-        backgroundColor: AppColors.kcPrimaryAccentColor,
-        iconTheme: IconThemeData(color: AppColors.kcWhite),
-        actions: [
-          InkWell(
-            onTap: () {
-
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset(AppAssets.icSetting,
-                  height: 20,
-                  width: 20,
-                  color: Colors.white,
-                  fit: BoxFit.fill),
-            ),
-          ),
-        ],
-      ),
+      appBar: getTopAppBar("Hi, Deepa's"),
        body:  SafeArea(
           child: CustomScrollView(
             slivers: [

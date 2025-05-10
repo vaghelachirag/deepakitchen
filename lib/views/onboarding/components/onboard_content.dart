@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class OnboardContent extends StatelessWidget {
@@ -21,7 +22,7 @@ class OnboardContent extends StatelessWidget {
             child: SvgPicture.asset(illustration!),
           ),
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: 16.sp),
         Text(
           title!,
           style: Theme.of(context)
@@ -29,7 +30,7 @@ class OnboardContent extends StatelessWidget {
               .titleLarge!
               .copyWith(fontWeight: FontWeight.bold),
         ),
-        const SizedBox(height: 8),
+         SizedBox(height: 8.sp),
         Text(
           text!,
           style: Theme.of(context).textTheme.bodyMedium,

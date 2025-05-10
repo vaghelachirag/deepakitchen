@@ -2,6 +2,7 @@ import 'package:deepaskitchen/shared/constants/ColorConstants.dart';
 import 'package:deepaskitchen/views/home/HomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Mainscreen extends StatefulWidget {
@@ -53,8 +54,8 @@ class _MainScreenState extends State<Mainscreen> {
               (index) => BottomNavigationBarItem(
             icon: SvgPicture.asset(
               _navitems[index]["icon"],
-              height: 30,
-              width: 30,
+              height: 30.sp,
+              width: 30.sp,
               colorFilter: ColorFilter.mode(
                   index == _selectedIndex ? ColorConstants.primaryColor : ColorConstants.bodyTextColor,
                   BlendMode.srcIn),

@@ -28,6 +28,7 @@ class AppAssets {
   static const icKycFalse = "$assetFromIconsPath/ic_kyc_false.PNG";
   static const icKycTrue = "$assetFromIconsPath/ic_kyc_true.PNG";
   static const icSetting = "$assetFromIconsPath/ic_settings.png";
+  static const icNotification = "$assetFromIconsPath/ic_notification.png";
   static const icIncome = "$assetFromIconsPath/ic_income.PNG";
   static const icPromotion = "$assetFromIconsPath/ic_promotion.PNG";
   static const icMyDownline = "$assetFromIconsPath/ic_my_downline.PNG";

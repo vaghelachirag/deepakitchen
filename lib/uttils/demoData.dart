@@ -73,6 +73,21 @@ List<Map<String, dynamic>> demoMediumCardData = [
     "location": "₹ 25",
     "rating": 9.5,
     "delivertTime": 15,
+  },{
+    "name": "Methi Thepla",
+    "quantity": "2 Piece",
+    "image": "assets/images/methithepla.png",
+    "location": "₹ 25",
+    "rating": 9.5,
+    "delivertTime": 15,
+  },
+  {
+    "name": "Methi Thepla",
+    "quantity": "2 Piece",
+    "image": "assets/images/methithepla.png",
+    "location": "₹ 25",
+    "rating": 9.5,
+    "delivertTime": 15,
   }
 ];
 

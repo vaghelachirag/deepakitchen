@@ -1,5 +1,6 @@
 import 'package:deepaskitchen/uttils/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../global/constant/colors.dart';
 import '../../uttils/constants.dart';
@@ -40,12 +41,39 @@ class RestaurantInfoMediumCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AspectRatio(
-              aspectRatio: 1.25,
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-                child: Image.asset(image, fit: BoxFit.cover),
-              ),
+            Stack(
+              children: [
+                AspectRatio(
+                  aspectRatio: 1.25,
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                    child: Image.asset(
+                      image,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.green.withOpacity(0.7),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child:  Text(
+                      'Available',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: labelFrontRegular,
+                        fontSize: 10,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: defaultPadding / 2.5),
             Row(

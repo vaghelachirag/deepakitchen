@@ -45,7 +45,10 @@ dependencies:
   carousel_slider: ^5.0.0
   zoom_tap_animation: ^1.1.0
   font_awesome_flutter: ^10.8.0
-font_awesome_flutter: ^10.8.0
+  flutter_screenutil: ^5.9.3
+  dio: ^5.8.0+1
+  connectivity_plus: ^6.1.4
+  loading_indicator: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +66,7 @@ dev_dependencies:
   flutter_svg: ^2.0.6
   google_fonts:
   form_field_validator: ^1.1.0
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

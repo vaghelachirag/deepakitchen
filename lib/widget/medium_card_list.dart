@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../routes/routes.dart';
 import '../uttils/constants.dart';
 import '../uttils/demoData.dart';
 import 'medium/restaurant_info_medium_card.dart';
@@ -37,7 +38,9 @@ class _MediumCardListState extends State<MediumCardList> {
       children: [
         SizedBox(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.28,
+          height:  MediaQuery.of(context).size.height * 0.8 > 220
+        ? 270
+        : MediaQuery.of(context).size.height * 0.9,
           child: isLoading
               ? buildFeaturedPartnersLoadingIndicator()
               : ListView.builder(
@@ -56,12 +59,9 @@ class _MediumCardListState extends State<MediumCardList> {
                 delivertTime: 25,
                 rating: 4.6,
                 press: () {
-                  /* Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const DetailsScreen(),
-                    ),
-                  );*/
+
+                  Get.offAllNamed(Routes.productDetail);
+
                 },
               ),
             ),
