@@ -1,3 +1,4 @@
+import 'package:deepaskitchen/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -26,7 +27,7 @@ class SideMenu extends StatelessWidget {
               Positioned(
                 left: 20,
                 top: Get.height * 0.07,
-                child: Container(
+                child: SizedBox(
                   height: 50,
                   width: 50,
                   child: Text("data"),
@@ -93,24 +94,24 @@ class SideMenu extends StatelessWidget {
             child: Container(
                 margin: EdgeInsets.only(left: 20, top: 25),
                 child: Text(
-                  'My Sales',
+                  'Schedule Order',
                   style: AppStyles.txt14sizeW700ColorGredient,
                 )),
           ),
           InkWell(
             onTap: () {
-
+                 Get.offAllNamed(Routes.scheduleOrder);
             },
             child: Container(
                 margin: EdgeInsets.only(left: 20, top: 25),
                 child: Text(
-                  'My Purchases',
+                  'Schedule Order',
                   style: AppStyles.txt14sizeW700ColorGredient,
                 )),
           ),
           InkWell(
             onTap: () {
-
+              Get.offAllNamed(Routes.scheduleOrder);
             },
             child: Container(
                 margin: EdgeInsets.only(left: 20, top: 25),

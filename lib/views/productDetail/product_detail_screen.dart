@@ -1,10 +1,12 @@
 import 'package:deepaskitchen/global/constant/colors.dart';
+import 'package:deepaskitchen/routes/routes.dart';
 import 'package:deepaskitchen/uttils/theme/app_theme.dart';
 import 'package:deepaskitchen/views/productDetail/product_detail_controller.dart';
 import 'package:deepaskitchen/widget/common_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../uttils/app_button.dart';
 import '../../uttils/constants.dart' as ThemeColor;
 
 
@@ -189,16 +191,14 @@ Widget bottomBar(){
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         Spacer(),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.green[700],
-            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-          ),
-          onPressed: () {
-            // Add to cart logic
-          },
-          child: Text('Add to Cart', style: TextStyle(fontSize: 16)),
-        ),
+        AppButton(
+            onTap: () => {
+              Get.offAllNamed(Routes.scheduleOrder)
+            },
+            horizontalPadding: Get.width *
+                0.1,
+            btnBgColor: AppColors.kcRed,
+            btnText: "Add To Cart"),
       ],
     ),
   );
