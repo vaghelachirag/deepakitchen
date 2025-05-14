@@ -10,7 +10,6 @@ import 'package:get/route_manager.dart';
 import '../controllers/home/HomeBinding.dart';
 import '../controllers/products/ProductBinding.dart';
 import '../views/authentication/LoginPage.dart';
-import '../views/authentication/SplashPage.dart';
 import '../views/home/HomePage.dart';
 import '../views/notification/notification_binding.dart';
 import '../views/notification/notification_screen.dart';
@@ -28,10 +27,6 @@ class Routes {
 
 
   static final routes = [
-    GetPage(
-      name: '/splash', 
-      page: () => SplashPage(),
-    ),
     GetPage(
       name: '/login', 
       page: () => LoginPage(),

@@ -1,10 +1,10 @@
-import 'package:deepaskitchen/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import '../../../../global/constant/assets.dart';
 import '../../../../global/constant/styles.dart';
+import '../../routes/app_pages.dart';
 import '../../uttils/config.dart';
 
 class SideMenu extends StatelessWidget {
@@ -68,7 +68,7 @@ class SideMenu extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Get.back();
+              Get.offAllNamed(Routes.home);
             },
             child: Container(
                 margin: EdgeInsets.only(left: 20, top: 20),
@@ -89,7 +89,7 @@ class SideMenu extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-
+              Get.back();
             },
             child: Container(
                 margin: EdgeInsets.only(left: 20, top: 25),
@@ -111,7 +111,7 @@ class SideMenu extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Get.offAllNamed(Routes.scheduleOrder);
+              Get.toNamed(Routes.scheduleOrder);
             },
             child: Container(
                 margin: EdgeInsets.only(left: 20, top: 25),
@@ -156,7 +156,6 @@ class SideMenu extends StatelessWidget {
           InkWell(
             onTap: () {
               Config.webViewAppbarText = "My Profile";
-
             },
             child: Container(
                 margin: EdgeInsets.only(left: 20, top: 25),

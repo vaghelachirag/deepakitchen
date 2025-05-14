@@ -1,11 +1,13 @@
 import 'package:deepaskitchen/routes/routes.dart';
 import 'package:deepaskitchen/themes/Themes.dart';
+import 'package:deepaskitchen/uttils/config.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'AppBinding.dart';
 import 'controllers/theme/ThemesController.dart';
+import 'routes/app_pages.dart';
 
 void main() async {
   await GetStorage.init();
@@ -19,12 +21,12 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter e-commerce app',
+      title: Config.appName,
       theme: Themes.lightTheme,
       darkTheme: Themes.darkTheme,
       themeMode: getThemeMode(themeController.theme),
-      getPages: Routes.routes,
-      initialRoute: Routes.INITIAL,
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
       initialBinding: AppBinding(),
     );
   }

@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import '../global/constant/assets.dart';
 import '../global/constant/colors.dart';
 import '../global/constant/styles.dart';
-import '../routes/routes.dart';
+import '../routes/app_pages.dart';
 import '../uttils/constants.dart' as AppConstant;
 
 Text labelTextBold(hint, double fontSize, Color labelTextColor) {
@@ -74,7 +74,6 @@ AppBar getTopAppBar(String title){
     actions: [
       InkWell(
         onTap: () {
-
           Get.offAllNamed(Routes.notification);
         },
         child: Padding(
