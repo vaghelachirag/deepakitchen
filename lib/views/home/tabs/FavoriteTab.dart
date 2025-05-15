@@ -16,6 +16,7 @@ import 'package:get/get.dart';
 
 import '../../../widget/common_widget.dart';
 import '../../sidemenu/sidemenu_view.dart';
+import 'mycart/foodItemController.dart';
 
 class FavoriteTab extends GetView<CategoryController> {
   const FavoriteTab({ Key? key }) : super(key: key);
@@ -50,6 +51,7 @@ class FavoriteTab extends GetView<CategoryController> {
                              imageUrl: demoMediumCardData[index]["image"],
                              isAvailable: true,
                              rating: 4.5,
+                             controller: Get.put(FoodItemController()),
                            );
                          },
                        ),

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../global/constant/colors.dart';
+import '../views/home/tabs/mycart/foodItemController.dart';
 
 class FoodItemCard extends StatelessWidget {
   final String name;
@@ -12,6 +13,7 @@ class FoodItemCard extends StatelessWidget {
   final String imageUrl;
   final bool isAvailable;
   final double rating; // From 0.0 to 5.0
+  final FoodItemController controller;
 
   const FoodItemCard({
     super.key,
@@ -21,6 +23,7 @@ class FoodItemCard extends StatelessWidget {
     required this.imageUrl,
     required this.isAvailable,
     required this.rating,
+    required this.controller,
   });
 
   @override
@@ -78,12 +81,18 @@ class FoodItemCard extends StatelessWidget {
             ),
             // Quantity buttons
             Row(
-              children: const [
-                Icon(Icons.remove_circle_outline),
+              children:  [
+                IconButton(
+                  icon: const Icon(Icons.remove_circle_outline),
+                  onPressed: controller.decrement,
+                ),
                 SizedBox(width: 4),
-                Text("0"),
+                Obx(() => Text(controller.quantity.value.toString())),
                 SizedBox(width: 4),
-                Icon(Icons.add_circle_outline),
+                IconButton(
+                  icon: const Icon(Icons.add_circle_outline),
+                  onPressed: controller.increment,
+                ),
               ],
             ),
           ],

@@ -1,4 +1,6 @@
 import 'package:carousel_slider/carousel_controller.dart';
+import 'package:deepaskitchen/views/home/tabs/mycart/mycart_screen.dart';
+import 'package:deepaskitchen/views/home/tabs/product/product_list_screen..dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +33,7 @@ class HomeController extends GetxController {
   List<Widget> pages = [
     ExploreTab(),
     FavoriteTab(),
-    CardTab(),
+    MyCartScreen(),
     UserTab(),
   ];
 

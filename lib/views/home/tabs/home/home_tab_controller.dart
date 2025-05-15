@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:deepaskitchen/views/home/tabs/dashboard/dashboard_tab.dart';
-import 'package:deepaskitchen/views/home/tabs/home/home_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,9 +10,9 @@ import '../../../../providers/CategoryProvider.dart';
 import '../../../../providers/OfferProvider.dart';
 import '../../../../providers/ProductProvider.dart';
 import '../CardTab.dart';
-import '../ExploreTab.dart';
 import '../FavoriteTab.dart';
 import '../UserTab.dart';
+import '../product/product_list_screen..dart';
 
 
 class HomeTabController extends GetxController {
@@ -34,7 +33,7 @@ class HomeTabController extends GetxController {
   List<Widget> pages = [
     DashboardTab(),
     FavoriteTab(),
-    CardTab(),
+    ProductListScreen(),
     UserTab(),
   ];
 
