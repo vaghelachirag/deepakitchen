@@ -21,8 +21,11 @@ import 'mycart/foodItemController.dart';
 class FavoriteTab extends GetView<CategoryController> {
   const FavoriteTab({ Key? key }) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut<CategoryController>(() => CategoryController(Get.find()));
+
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     final theme = Theme.of(context);
     return Scaffold(
@@ -36,7 +39,7 @@ class FavoriteTab extends GetView<CategoryController> {
                   SizedBox(height: 20,),
                   SearchWidget(),
                   SizedBox(height: 20,),
-                  _buildCategories(),
+                  _buildCategories(controller),
                   SizedBox(
                     height: Get.height * 0.8,
                      child:  Expanded(
@@ -92,24 +95,20 @@ onPressed: () => {},
 }
 
 
-_buildCategories() {
-  return SingleChildScrollView(
-    scrollDirection: Axis.horizontal,
-    padding: EdgeInsets.only(bottom: 5, left: 15),
-    child: Row(
-      children: [
-        AllCategoryItem(
-          data: {
-            "name": "All",
-            "icon": FontAwesomeIcons.th,
-          },
-          seleted: true,
-        ),
-        ...List.generate(
-          categories.length,
-              (index) => AllCategoryItem(data: categories[index]),
-        )
-      ],
+_buildCategories(CategoryController controller) {
+  return Obx(
+        () => SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Row(
+        children: List.generate(categories.length, (index) {
+          return AllCategoryItem(
+            data: categories[index],
+            seleted: controller.selectedIndex.value == index,
+            onTap: () => controller.selectCategory(index),
+          );
+        }),
+      ),
     ),
   );
 }

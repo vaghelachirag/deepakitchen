@@ -6,7 +6,8 @@ abstract class Routes {
   static const home = _Paths.home;
   static const splashView = _Paths.splashView;
   static const scheduleOrder = _Paths.scheduleOrder;
-  static String notification = '/notification';
+  static String notification = _Paths.notification;
+  static String productDetail = _Paths.productDetail;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const splashView = '/SplashView';
   static const scheduleOrder = '/scheduleOrder';
   static String notification = '/notification';
+  static String productDetail = '/productDetail';
 }

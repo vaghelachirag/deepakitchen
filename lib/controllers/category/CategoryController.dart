@@ -27,6 +27,7 @@ class CategoryController extends GetxController {
   var activeOffers = <OfferModel>[].obs;
   var categories = <CategoryModel>[].obs;
   var discountedProducts = <ProductModel>[].obs;
+  var selectedIndex = 0.obs;
 
   List<Widget> pages = [
     ExploreTab(),
@@ -50,6 +51,10 @@ class CategoryController extends GetxController {
     _offerProvider.getOffers().then((offers) {
       activeOffers.value = offers;
     });
+  }
+
+  void selectCategory(int index) {
+    selectedIndex.value = index;
   }
 
   void getCategories() {

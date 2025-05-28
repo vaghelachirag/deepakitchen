@@ -49,6 +49,8 @@ dependencies:
   dio: ^5.8.0+1
   connectivity_plus: ^6.1.4
   loading_indicator: ^3.1.0
+  shared_preferences: ^2.5.3
+  dots_indicator: ^4.0.1
 
 dev_dependencies:
   flutter_test:

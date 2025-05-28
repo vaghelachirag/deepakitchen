@@ -7,14 +7,24 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../uttils/app_button.dart';
-import '../../uttils/constants.dart' as ThemeColor;
+import '../../uttils/constants.dart' as ThemeColor show mainBg;
 
 
-class ProductDetailScreen extends StatelessWidget {
+class ProductDetailScreen extends StatefulWidget {
 
+  ProductDetailScreen({super.key});
+
+  @override
+  State<ProductDetailScreen> createState() => _ProductDetailScreenState();
+}
+
+class _ProductDetailScreenState extends State<ProductDetailScreen> {
   int quantity = 1;
+
   bool addCurd = false;
+
   bool extraPickle = false;
+
   double basePrice = 60.0;
 
   final List<Map<String, dynamic>> reviews = [
@@ -36,7 +46,6 @@ class ProductDetailScreen extends StatelessWidget {
     if (extraPickle) extras += 5;
     return (basePrice + extras) * quantity;
   }
-
 
   Widget buildCard({required Widget child}) {
     return Card(
@@ -60,8 +69,6 @@ class ProductDetailScreen extends StatelessWidget {
       ),
     );
   }
-
-  ProductDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

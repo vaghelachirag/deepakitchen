@@ -14,6 +14,10 @@ import '../../views/home/tabs/CardTab.dart';
 import '../../views/home/tabs/ExploreTab.dart';
 import '../../views/home/tabs/FavoriteTab.dart';
 import '../../views/home/tabs/UserTab.dart';
+import '../../views/product/ProductPage.dart';
+import '../../views/product/food_page_body.dart';
+import '../../views/product/main_food_page.dart';
+import '../../views/productDetail/product_detail_screen.dart';
 
 class HomeController extends GetxController {
   final OfferProvider _offerProvider;
@@ -33,7 +37,7 @@ class HomeController extends GetxController {
   List<Widget> pages = [
     ExploreTab(),
     FavoriteTab(),
-    MyCartScreen(),
+    MainFoodPage(),
     UserTab(),
   ];
 

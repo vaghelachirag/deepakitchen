@@ -8,6 +8,7 @@ import 'medium_card_scalton.dart';
 import 'package:get/get.dart';
 
 
+
 class MediumCardList extends StatefulWidget {
   const MediumCardList({
     super.key,
@@ -59,9 +60,7 @@ class _MediumCardListState extends State<MediumCardList> {
                 delivertTime: 25,
                 rating: 4.6,
                 press: () {
-
-                  Get.offAllNamed(Routes.productDetail);
-
+                  Get.off(Routes.scheduleOrder);
                 },
               ),
             ),

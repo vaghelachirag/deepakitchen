@@ -54,6 +54,15 @@ class ScheduleOrderScreen extends StatelessWidget {
                 Expanded(
                   child: Obx(() => ElevatedButton(
                     onPressed: () => controller.pickDate(context),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent, // button color
+                      foregroundColor: Colors.white, // text/icon color
+                      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      elevation: 5, // shadow depth
+                    ),
                     child: Text(controller.selectedDate.value == null
                         ? 'Select Date'
                         : DateFormat('dd MMM yyyy')
@@ -64,6 +73,15 @@ class ScheduleOrderScreen extends StatelessWidget {
                 Expanded(
                   child: Obx(() => ElevatedButton(
                     onPressed: () => controller.pickTime(context),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent, // button color
+                      foregroundColor: Colors.white, // text/icon color
+                      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      elevation: 5, // shadow depth
+                    ),
                     child: Text(controller.selectedTime.value == null
                         ? 'Select Time'
                         : controller.selectedTime.value!.format(context)),
@@ -102,7 +120,15 @@ class ScheduleOrderScreen extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: controller.scheduleOrder,
-              style: ElevatedButton.styleFrom(minimumSize: Size.fromHeight(50)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal, // button color
+                foregroundColor: Colors.white, // text/icon color
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                elevation: 5, // shadow depth
+              ),
               child: Text('Schedule Order'),
             )
           ],

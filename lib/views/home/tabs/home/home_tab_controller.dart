@@ -9,6 +9,9 @@ import '../../../../models/products/ProductModel.dart';
 import '../../../../providers/CategoryProvider.dart';
 import '../../../../providers/OfferProvider.dart';
 import '../../../../providers/ProductProvider.dart';
+import '../../../product/ProductPage.dart';
+import '../../../product/food_page_body.dart';
+import '../../../productDetail/product_detail_screen.dart';
 import '../CardTab.dart';
 import '../FavoriteTab.dart';
 import '../UserTab.dart';
@@ -33,7 +36,7 @@ class HomeTabController extends GetxController {
   List<Widget> pages = [
     DashboardTab(),
     FavoriteTab(),
-    ProductListScreen(),
+    FavoriteTab(),
     UserTab(),
   ];
 

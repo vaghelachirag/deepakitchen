@@ -32,7 +32,7 @@ class CategoryTab extends GetView<CategoryController> {
                   SizedBox(height: 20,),
                   SearchWidget(),
                   SizedBox(height: 20,),
-                  _buildCategories(),
+                  //_buildCategories(controller),
                   SizedBox(
                     height: Get.height * 0.8,
                     child:  Expanded(
@@ -89,7 +89,7 @@ Widget productQuantity() {
 }
 
 
-_buildCategories() {
+_buildCategories(CategoryController controller) {
   return SingleChildScrollView(
     scrollDirection: Axis.horizontal,
     padding: EdgeInsets.only(bottom: 5, left: 15),
@@ -104,7 +104,9 @@ _buildCategories() {
         ),
         ...List.generate(
           categories.length,
-              (index) => AllCategoryItem(data: categories[index]),
+              (index) => AllCategoryItem(data: categories[index],seleted: controller.selectedIndex.value == index, onTap: () => {
+                print("Category"+ "Category")
+              }),
         )
       ],
     ),

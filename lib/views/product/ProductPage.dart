@@ -136,7 +136,7 @@ class ProductPage extends GetView<ProductController> {
                                 onTap: () => controller.decrement(),
                                 child: Icon(Icons.remove, size: 18,)),
                               SizedBox(width: 4,),
-                              Container(
+                              SizedBox(
                                 width: 30,
                                 height: 30,
                                 child: TextField(
