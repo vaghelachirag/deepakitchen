@@ -46,7 +46,7 @@ class AllCategoryItem extends StatelessWidget {
             SizedBox(width: 7),
             Text(
               data["name"],
-              maxLines: 1,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 13,

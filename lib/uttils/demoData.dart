@@ -33,6 +33,130 @@ List<String> demoBigImages = [
   "assets/images/ไก่ทอดบ้านๆ.jpg"
 ];
 
+
+// Assuming you have a map of categories and their items
+Map<int, List<Map<String, dynamic>>> categoryItems = {
+  0: [ {
+    "name": "Cheese Handvo",
+    "quantity": "100 Gm",
+    "image": "assets/images/cheesehandvo.png",
+    "location": "₹ 50",
+    "rating": 8.6,
+    "delivertTime": 20,
+  },
+    {
+      "name": "Puri Bhaji",
+      "quantity": "5 Piece",
+      "image": "assets/images/puribhaji.jpg",
+      "location": "₹ 80",
+      "rating": 9.1,
+      "delivertTime": 35,
+    },
+    {
+      "name": "Ghughra",
+      "quantity": "2 Piece",
+      "image": "assets/images/ghughra.jpg",
+      "location": "₹ 50",
+      "rating": 7.3,
+      "delivertTime": 25,
+    },
+    {
+      "name": "Dhokla",
+      "quantity": "100 Gm",
+      "image": "assets/images/dhokla.jpg",
+      "location": "₹ 50",
+      "rating": 8.4,
+      "delivertTime": 30,
+    },
+    {
+      "name": "Methi Thepla",
+      "quantity": "2 Piece",
+      "image": "assets/images/methithepla.png",
+      "location": "₹ 25",
+      "rating": 9.5,
+      "delivertTime": 15,
+    },{
+      "name": "Methi Thepla",
+      "quantity": "2 Piece",
+      "image": "assets/images/methithepla.png",
+      "location": "₹ 25",
+      "rating": 9.5,
+      "delivertTime": 15,
+    },
+    {
+      "name": "Methi Thepla",
+      "quantity": "2 Piece",
+      "image": "assets/images/methithepla.png",
+      "location": "₹ 25",
+      "rating": 9.5,
+      "delivertTime": 15,
+    } ],
+  1: [{
+    "name": "Cheese Handvo",
+    "quantity": "100 Gm",
+    "image": "assets/images/cheesehandvo.png",
+    "location": "₹ 50",
+    "rating": 8.6,
+    "delivertTime": 20,
+  },
+    {
+      "name": "Puri Bhaji",
+      "quantity": "5 Piece",
+      "image": "assets/images/puribhaji.jpg",
+      "location": "₹ 80",
+      "rating": 9.1,
+      "delivertTime": 35,
+    },
+    {
+      "name": "Ghughra",
+      "quantity": "2 Piece",
+      "image": "assets/images/ghughra.jpg",
+      "location": "₹ 50",
+      "rating": 7.3,
+      "delivertTime": 25,
+    },
+    {
+      "name": "Dhokla",
+      "quantity": "100 Gm",
+      "image": "assets/images/dhokla.jpg",
+      "location": "₹ 50",
+      "rating": 8.4,
+      "delivertTime": 30,
+    },
+    {
+      "name": "Methi Thepla",
+      "quantity": "2 Piece",
+      "image": "assets/images/methithepla.png",
+      "location": "₹ 25",
+      "rating": 9.5,
+      "delivertTime": 15,
+    },{
+      "name": "Methi Thepla",
+      "quantity": "2 Piece",
+      "image": "assets/images/methithepla.png",
+      "location": "₹ 25",
+      "rating": 9.5,
+      "delivertTime": 15,
+    },
+    {
+      "name": "Methi Thepla",
+      "quantity": "2 Piece",
+      "image": "assets/images/methithepla.png",
+      "location": "₹ 25",
+      "rating": 9.5,
+      "delivertTime": 15,
+    }],
+  2: [ {
+    "name": "Cheese Handvo",
+    "quantity": "100 Gm",
+    "image": "assets/images/cheesehandvo.png",
+    "location": "₹ 50",
+    "rating": 8.6,
+    "delivertTime": 20,
+  }],
+};
+
+
 List<Map<String, dynamic>> demoMediumCardData = [
   {
     "name": "Cheese Handvo",
@@ -93,11 +217,11 @@ List<Map<String, dynamic>> demoMediumCardData = [
 
 
 List categories = [
-  {"name": "Salad", "icon": Icons.rice_bowl},
-  {"name": "Burger", "icon": Icons.rice_bowl},
-  {"name": "Drink", "icon": Icons.rice_bowl},
-  {"name": "Soup", "icon": Icons.rice_bowl},
-  {"name": "Snack", "icon": Icons.rice_bowl},
+  {"name": "All", "icon": Icons.rice_bowl},
+  {"name": "Thepla", "icon": Icons.rice_bowl},
+  {"name": "Morning", "icon": Icons.rice_bowl},
+  {"name": "Evening", "icon": Icons.rice_bowl},
+  {"name": "Healthy", "icon": Icons.rice_bowl},
 ];
 
 

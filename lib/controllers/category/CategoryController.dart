@@ -8,6 +8,7 @@ import '../../models/products/ProductModel.dart';
 import '../../providers/CategoryProvider.dart';
 import '../../providers/OfferProvider.dart';
 import '../../providers/ProductProvider.dart';
+import '../../uttils/demoData.dart';
 import '../../views/home/tabs/CardTab.dart';
 import '../../views/home/tabs/ExploreTab.dart';
 import '../../views/home/tabs/FavoriteTab.dart';
@@ -29,6 +30,9 @@ class CategoryController extends GetxController {
   var discountedProducts = <ProductModel>[].obs;
   var selectedIndex = 0.obs;
 
+  // Items for the currently selected category
+  var itemsForSelectedCategory = <Map<String, dynamic>>[].obs;
+
   List<Widget> pages = [
     ExploreTab(),
     FavoriteTab(),
@@ -45,6 +49,8 @@ class CategoryController extends GetxController {
     getCategories();
     getDiscountedProducts();
     super.onInit();
+
+    itemsForSelectedCategory.value = categoryItems[selectedIndex.value] ?? [];
   }
 
   void getOffers() {
@@ -55,6 +61,7 @@ class CategoryController extends GetxController {
 
   void selectCategory(int index) {
     selectedIndex.value = index;
+    itemsForSelectedCategory.value = categoryItems[index] ?? [];
   }
 
   void getCategories() {

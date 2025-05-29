@@ -1,13 +1,9 @@
 import 'package:deepaskitchen/uttils/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 
 import '../../../controllers/category/CategoryController.dart';
-import '../../../global/constant/assets.dart';
-import '../../../global/constant/colors.dart';
-import '../../../global/constant/styles.dart';
 import '../../../uttils/demoData.dart';
 import '../../../widget/CategoryItemCard.dart';
 import '../../../widget/SearchWidget.dart';
@@ -40,27 +36,7 @@ class FavoriteTab extends GetView<CategoryController> {
                   SearchWidget(),
                   SizedBox(height: 20,),
                   _buildCategories(controller),
-                  SizedBox(
-                    height: Get.height * 0.8,
-                     child:  Expanded(
-                       child: ListView.builder(
-                         shrinkWrap: true,
-                         itemCount: demoMediumCardData.length,
-                         itemBuilder: (context, int index) {
-                           return  FoodItemCard(
-                             name: demoMediumCardData[index]["name"],
-                             quantity: demoMediumCardData[index]["quantity"],
-                             price: 50,
-                             imageUrl: demoMediumCardData[index]["image"],
-                             isAvailable: true,
-                             rating: 4.5,
-                             controller: Get.put(FoodItemController()),
-                           );
-                         },
-                       ),
-                     ),
-                  )
-
+                  _loadCategory(controller)
                 ]),
               ),
             ],
@@ -111,4 +87,33 @@ _buildCategories(CategoryController controller) {
       ),
     ),
   );
+}
+
+_loadCategory(CategoryController controller){
+  return SizedBox(
+      height: Get.height * 0.8,
+      child:  Expanded(
+      child: Obx(() {
+    // Listen to itemsForSelectedCategory changes
+    final items = controller.itemsForSelectedCategory;
+    print(" ${items.length}");
+    if (items.isEmpty) {
+      return Center(child: Text("No items found for this category"));
+    }
+    return ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        final item = items[index];
+        return FoodItemCard(
+          name: item["name"],
+          quantity: item["quantity"],
+          price: item["price"] ?? 50,
+          imageUrl: item["image"],
+          isAvailable: item["isAvailable"] ?? true,
+          rating: item["rating"] ?? 4.5,
+          controller: Get.put(FoodItemController()),
+        );
+      },
+    );
+  })));
 }
