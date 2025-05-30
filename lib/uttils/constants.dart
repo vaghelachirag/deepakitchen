@@ -24,6 +24,8 @@ const Duration kDefaultDuration = Duration(milliseconds: 250);
 const String labelFrontExtraBold = 'SFProText-Bold.ttf' ;
  const String labelFrontLightItalic = 'Poppins-LightItalic.ttf' ;
 
+ const String categoryImagePath = 'assets/images/category/' ;
+
 
 
 

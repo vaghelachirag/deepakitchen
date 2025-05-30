@@ -38,12 +38,6 @@ class AllCategoryItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              data["icon"],
-              size: 17,
-              color: seleted ? Colors.white : darker,
-            ),
-            SizedBox(width: 7),
             Text(
               data["name"],
               maxLines: 2,

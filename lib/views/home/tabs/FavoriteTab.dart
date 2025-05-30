@@ -36,6 +36,7 @@ class FavoriteTab extends GetView<CategoryController> {
                   SearchWidget(),
                   SizedBox(height: 20,),
                   _buildCategories(controller),
+                  SizedBox(height: 10,),
                   _loadCategory(controller)
                 ]),
               ),
