@@ -40,8 +40,8 @@ class DashboardTab extends GetView<HomeController> {
             slivers: [
               SliverList(
                 delegate: SliverChildListDelegate([
-                  _buildOfferCarousel(context),
-                  _buildOfferIndicator(),
+                //  _buildOfferCarousel(context),
+                //   _buildOfferIndicator(),
                   SizedBox(height: 16,),
                   _FoodCategories(context),
                   SizedBox(height: 16.0),
@@ -102,7 +102,7 @@ class DashboardTab extends GetView<HomeController> {
 
   Widget _buildOfferCarousel(context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.25,
+      height: 500,
       child: CarouselSlider.builder(
         carouselController: controller.carouselController,
         options: CarouselOptions(

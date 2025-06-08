@@ -1,5 +1,4 @@
 import 'package:carousel_slider/carousel_controller.dart';
-import 'package:deepaskitchen/views/home/tabs/mycart/mycart_screen.dart';
 import 'package:deepaskitchen/views/home/tabs/product/product_list_screen..dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,14 +9,10 @@ import '../../models/products/ProductModel.dart';
 import '../../providers/CategoryProvider.dart';
 import '../../providers/OfferProvider.dart';
 import '../../providers/ProductProvider.dart';
-import '../../views/home/tabs/CardTab.dart';
 import '../../views/home/tabs/ExploreTab.dart';
 import '../../views/home/tabs/FavoriteTab.dart';
 import '../../views/home/tabs/UserTab.dart';
-import '../../views/product/ProductPage.dart';
-import '../../views/product/food_page_body.dart';
 import '../../views/product/main_food_page.dart';
-import '../../views/productDetail/product_detail_screen.dart';
 
 class HomeController extends GetxController {
   final OfferProvider _offerProvider;

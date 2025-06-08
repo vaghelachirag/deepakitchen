@@ -1,9 +1,13 @@
+import 'dart:convert' as convert;
+import 'dart:math';
+
 import 'package:deepaskitchen/uttils/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 
 import '../../../controllers/category/CategoryController.dart';
+import '../../../models/ItemData.dart';
 import '../../../uttils/demoData.dart';
 import '../../../widget/CategoryItemCard.dart';
 import '../../../widget/SearchWidget.dart';
@@ -14,9 +18,14 @@ import '../../../widget/common_widget.dart';
 import '../../sidemenu/sidemenu_view.dart';
 import 'mycart/foodItemController.dart';
 
-class FavoriteTab extends GetView<CategoryController> {
-  const FavoriteTab({ Key? key }) : super(key: key);
 
+import 'package:http/http.dart';
+
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+
+class FavoriteTab extends GetView<CategoryController> {
+   FavoriteTab({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +42,7 @@ class FavoriteTab extends GetView<CategoryController> {
               SliverList(
                 delegate: SliverChildListDelegate([
                   SizedBox(height: 20,),
-                  SearchWidget(),
+                  SearchWidget(controller),
                   SizedBox(height: 20,),
                   _buildCategories(controller),
                   SizedBox(height: 10,),
@@ -82,7 +91,7 @@ _buildCategories(CategoryController controller) {
           return AllCategoryItem(
             data: categories[index],
             seleted: controller.selectedIndex.value == index,
-            onTap: () => controller.selectCategory(index),
+            onTap: () => controller.getDataFromGoogleSheet(index),
           );
         }),
       ),
@@ -90,31 +99,63 @@ _buildCategories(CategoryController controller) {
   );
 }
 
-_loadCategory(CategoryController controller){
-  return SizedBox(
-      height: Get.height * 0.8,
-      child:  Expanded(
-      child: Obx(() {
-    // Listen to itemsForSelectedCategory changes
-    final items = controller.itemsForSelectedCategory;
-    print(" ${items.length}");
-    if (items.isEmpty) {
-      return Center(child: Text("No items found for this category"));
+Future<List<ItemData>> getDataFromGoogleSheet() async {
+
+  final List<ItemData> itemDataList = [];
+
+  http.Response data = await http.get(
+    Uri.parse(
+        "https://script.google.com/macros/s/AKfycbxTU_rtfiDyr2CG60Sn4u3wae2hYygQkTGQkod0US5zzAMRAdHW9zG15IjIJTl77frC/exec"),
+  );
+  dynamic jsonAppData = convert.jsonDecode(data.body);
+  jsonAppData.forEach((element) {
+    print('$element THIS IS NEXT>>>>>>>');
+    if(element['itemid'] == 1) {
+      ItemData itemData = ItemData(
+          itemid: element['itemid'],
+          itemname: element['itemname'],
+          image: element['image'],
+          price: element['price'],
+          availability: element['availability'],
+         quantity: "1"
+      );
+      itemDataList.add(itemData);
+      print("Item${itemDataList[0].itemid}");
     }
-    return ListView.builder(
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        final item = items[index];
-        return FoodItemCard(
-          name: item["name"],
-          quantity: item["quantity"],
-          price: item["price"] ?? 50,
-          imageUrl: item["image"],
-          isAvailable: item["isAvailable"] ?? true,
-          rating: item["rating"] ?? 4.5,
-          controller: Get.put(FoodItemController()),
+  });
+  return itemDataList;
+}
+
+_loadCategory(CategoryController controller){
+  return Padding(
+    padding: EdgeInsets.only(bottom: 50),
+    child: SizedBox(
+      height: Get.height * 0.8,
+      child: Obx(() {
+        final items = controller.itemDataList;
+        print(" total item  +${items.length}");
+        if(controller.isLoading.value){
+          Center(child: Text("Loading...."));
+        }
+        if (items.isEmpty) {
+          return Center(child: Text("No items found for this category"));
+        }
+        return ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            final item = items[index];
+            return FoodItemCard(
+              name: item.itemname,
+              quantity: item.quantity,
+              price: item.price,
+              imageUrl: item.image,
+              isAvailable: true,
+              rating: 4.5,
+              controller: Get.put(FoodItemController()),
+            );
+          },
         );
-      },
-    );
-  })));
+      }),
+    ),
+  );
 }

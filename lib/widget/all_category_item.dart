@@ -20,9 +20,8 @@ class AllCategoryItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 10),
         margin: EdgeInsets.only(right: 10),
-        width: 90,
         decoration: BoxDecoration(
           color: seleted ? primary : cardColor,
           borderRadius: BorderRadius.circular(10),

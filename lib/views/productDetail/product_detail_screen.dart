@@ -1,5 +1,6 @@
 import 'package:deepaskitchen/global/constant/colors.dart';
 import 'package:deepaskitchen/routes/routes.dart';
+import 'package:deepaskitchen/uttils/responsive.dart';
 import 'package:deepaskitchen/uttils/theme/app_theme.dart';
 import 'package:deepaskitchen/views/productDetail/product_detail_controller.dart';
 import 'package:deepaskitchen/widget/common_widget.dart';
@@ -12,7 +13,7 @@ import '../../uttils/constants.dart' as ThemeColor show mainBg;
 
 class ProductDetailScreen extends StatefulWidget {
 
-  ProductDetailScreen({super.key});
+  const ProductDetailScreen({super.key});
 
   @override
   State<ProductDetailScreen> createState() => _ProductDetailScreenState();
@@ -93,8 +94,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: Image.asset(
-                  'assets/images/puribhaji.jpg',
-                  height: 200,
+                  'assets/images/dhokla.jpg',
+                  height:  Responsive.isDesktop(context) == true  ? 500 : 200,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),

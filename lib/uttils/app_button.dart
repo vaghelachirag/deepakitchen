@@ -26,7 +26,7 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      height: 30,
+      height: 50,
         onPressed: onTap,
         //minWidth: double.infinity,
         color: btnBgColor ?? AppColors.kcPrimaryColor,

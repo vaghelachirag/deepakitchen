@@ -60,7 +60,8 @@ class _MediumCardListState extends State<MediumCardList> {
                 delivertTime: 25,
                 rating: 4.6,
                 press: () {
-                  Get.off(Routes.scheduleOrder);
+                  print("Card"+"Card Click");
+                  Get.offAllNamed(Routes.productDetail);
                 },
               ),
             ),

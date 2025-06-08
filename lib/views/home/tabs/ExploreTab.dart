@@ -1,29 +1,21 @@
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:deepaskitchen/uttils/responsive.dart';
 import 'package:deepaskitchen/uttils/theme/app_theme.dart';
 import 'package:deepaskitchen/views/home/promotion_banner.dart';
-import 'package:deepaskitchen/widget/all_category_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
-import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../../controllers/home/HomeController.dart';
-import '../../../global/constant/assets.dart';
-import '../../../global/constant/colors.dart';
-import '../../../global/constant/styles.dart';
-import '../../../models/categories/CategoryModel.dart';
 import '../../../models/offers/OfferModel.dart';
-import '../../../shared/constants/ColorConstants.dart';
 import '../../../uttils/constants.dart';
 import '../../../uttils/demoData.dart';
 import '../../../widget/common_widget.dart';
 import '../../../widget/medium_card_list.dart';
 import '../../../widget/section_title.dart';
 import '../../sidemenu/sidemenu_view.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 class ExploreTab extends GetView<HomeController> {
@@ -45,7 +37,7 @@ class ExploreTab extends GetView<HomeController> {
                   _buildOfferCarousel(context),
                   _buildOfferIndicator(),
                   SizedBox(height: 16,),
-                  _FoodCategories(context),
+                  _foodCategories(context),
                   SizedBox(height: 16.0),
                   SectionTitle(
                       title: "Best Selling",
@@ -73,7 +65,7 @@ class ExploreTab extends GetView<HomeController> {
 
   }
 
- Widget _FoodCategories(BuildContext context)  {
+ Widget _foodCategories(BuildContext context)  {
    final colorScheme = Theme.of(context).colorScheme;
     return Row(
         children:  foodCategories.take(5).map(
@@ -104,7 +96,7 @@ class ExploreTab extends GetView<HomeController> {
 
   Widget _buildOfferCarousel(context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.25,
+      height:  Responsive.isDesktop(context) == true  ? MediaQuery.of(context).size.height * 0.75 : MediaQuery.of(context).size.height * 0.25 ,
       child: CarouselSlider.builder(
         carouselController: controller.carouselController,
         options: CarouselOptions(
@@ -162,46 +154,6 @@ class ExploreTab extends GetView<HomeController> {
     ));
   }
 
-  Widget _buildCategory(CategoryModel category, index, theme) {
-    return ZoomTapAnimation(
-      beginDuration: Duration(milliseconds: 300),
-      endDuration: Duration(milliseconds: 500),
-      child: Container(
-        clipBehavior: Clip.hardEdge,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        margin: EdgeInsets.only(right: controller.categories.length - 1 == index ? 0 : 8),
-        child: Stack(
-          children: [
-            SizedBox(
-              width: 120,
-              height: 60,
-              child: CachedNetworkImage(
-                imageUrl: category.image,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              child: Container(
-                height: 80,
-                decoration: BoxDecoration(
-                  color: Colors.black.withAlpha(110),
-                ),
-                child: Center(
-                  child: Text(category.name, textAlign: TextAlign.center, style: theme.textTheme.titleLarge?.copyWith(color: Colors.white),),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
 
   Widget _buildSection(String title, ThemeData theme) {
     return Padding(
@@ -224,112 +176,5 @@ class ExploreTab extends GetView<HomeController> {
       ),
     );
   }
-
-  _buildCategories() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.only(bottom: 5, left: 15),
-      child: Row(
-        children: [
-          AllCategoryItem(
-            data: {
-              "name": "All",
-              "icon": FontAwesomeIcons.th,
-            },
-            seleted: true,
-          ),
-          ...List.generate(
-            categories.length,
-                (index) => AllCategoryItem(data: categories[index]),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDiscountedProducts(ThemeData theme) {
-    return SizedBox(
-      height: Get.height * 0.30,
-      child: ListView.builder(
-        padding: EdgeInsets.only(left: 16),
-        scrollDirection: Axis.horizontal,
-        itemCount: controller.discountedProducts.length,
-        itemBuilder: (context, index) {
-          return AspectRatio(
-            aspectRatio: 1,
-            child: GestureDetector(
-              onTap: () {
-                Get.toNamed('/product/${controller.discountedProducts[index].id}');
-              },
-              child: Container(
-                clipBehavior: Clip.hardEdge,
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Get.isDarkMode ? ColorConstants.gray700 : Colors.grey.shade200,
-                  border: Border.all(color: Get.isDarkMode ? Colors.transparent : Colors.grey.shade200, width: 1),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 150,
-                      width: double.infinity,
-                      child: CachedNetworkImage(
-                        imageUrl: controller.discountedProducts[index].image,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(controller.discountedProducts[index].name, style: theme.textTheme.titleLarge),
-                          SizedBox(height: 5,),
-                          Text(controller.discountedProducts[index].brand, style: theme.textTheme.bodyMedium),
-                          SizedBox(height: 8,),
-                          Row(
-                            children: [
-                              Text(controller.discountedProducts[index].price, style: theme.textTheme.bodyLarge?.copyWith(decoration: TextDecoration.lineThrough, color: ColorConstants.gray200),),
-                              SizedBox(width: 5,),
-                              Icon(IconlyLight.arrow_right, size: 18, color: Colors.grey.shade600, ),
-                              SizedBox(width: 5,),
-                              Text(controller.discountedProducts[index].discountPrice, style: theme.textTheme.titleLarge?.copyWith(),),
-                            ],
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                )
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
 }
 
-_buildCategories() {
-  return SingleChildScrollView(
-    scrollDirection: Axis.horizontal,
-    padding: EdgeInsets.only(bottom: 5, left: 15),
-    child: Row(
-      children: [
-        AllCategoryItem(
-          data: {
-            "name": "All",
-            "icon": FontAwesomeIcons.th,
-          },
-          seleted: true,
-        ),
-        ...List.generate(
-          categories.length,
-              (index) => AllCategoryItem(data: categories[index]),
-        )
-      ],
-    ),
-  );
-}

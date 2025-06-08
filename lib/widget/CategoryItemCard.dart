@@ -1,3 +1,4 @@
+import 'package:deepaskitchen/uttils/responsive.dart';
 import 'package:deepaskitchen/widget/common_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,10 +45,10 @@ class FoodItemCard extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  child: Image.asset(
+                  child: Image.network(
                     imageUrl,
-                    width: Get.width * 0.30,
-                    height:  Get.width * 0.28,
+                    width: Get.width * 0.3,
+                    height:   Responsive.isDesktop(context) == true ? Get.height * 0.3 : Get.height * 0.140 ,
                     fit: BoxFit.cover,
                   ),
                 ),
